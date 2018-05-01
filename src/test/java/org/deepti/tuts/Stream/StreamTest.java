@@ -9,12 +9,15 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.util.Arrays.asList;
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class StreamTest {
 
 
     @Test
     public void testStream() {
-        List<String> temp = Arrays.asList("CL", "BC", "X5", "4X");
+        List<String> temp = asList("CL", "BC", "X5", "4X");
 
         List<String> result =  temp.parallelStream()
                 .filter( s ->s.equalsIgnoreCase("CL"))
@@ -34,7 +37,7 @@ public class StreamTest {
         validFilterTags.add(new FilterTags("BCC", 3));
         validFilterTags.add(new FilterTags("4X", 1));
 
-        List<String> prefered = Arrays.asList("CL", "BCC");
+        List<String> prefered = asList("CL", "BCC");
         Collections.reverse(prefered);
 
         //for every preferred tag change order to 0 and set that in front
@@ -58,7 +61,7 @@ public class StreamTest {
         validFilterTags.add(new FilterTags("BCC", 3));
         validFilterTags.add(new FilterTags("4X", 1));
 
-        List<String> prefered = Arrays.asList("CL", "BCC");
+        List<String> prefered = asList("CL", "BCC");
         Collections.reverse(prefered);
 
         //for every preferred tag change order to 0 and set that in front
